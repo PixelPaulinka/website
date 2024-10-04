@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Общие стили для body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+    color: #000; /* Установлен черный цвет текста */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 1.2em;
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+    box-sizing: border-box; /* Учитываем границы и отступы в ширине */
+}
+
+/* Стили для хедера */
+.header-extra {
+    background-color: #e0e0e0;
+    color: #000; /* Установлен черный цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    min-height: 40px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.header-extra.fade-in {
+    opacity: 1;
+}
+
+.header-extra span,
+.header-extra .contact-info {
+    margin: 0 5px;
+}
+
+.header-extra .contact-info a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-extra .contact-info a img:hover {
+    transform: scale(1.2);
+}
+
+.header-extra a {
+    color: #000; /* Установлен черный цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.header-extra a:hover {
+    color: #ff0000; /* Цвет при наведении */
+}
+
+/* Стили для логотипа и навигации */
+.logo-container {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.logo-container.fade-in {
+    opacity: 1;
+}
+
+.logo {
+    width: 48px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000; /* Установлен черный цвет ссылок */
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+nav ul li a:hover span {
+    letter-spacing: 1px;
+}
+
+/* Дропдаун меню */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav ul li .dropdown-content a {
+    color: black; /* Установлен черный цвет текста в выпадающем меню */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Основные стили для main */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Стили для заголовков и текста */
+h2 {
+    margin: 0;
+    color: #000; /* Заголовок черный */
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+p {
+    color: #666; /* Серый цвет текста для параграфов */
+    font-family: 'Open Sans', sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Стили для footer */
+footer {
+    background-color: #e0e0e0;
+    color: #000; /* Черный цвет текста */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Контейнер для продуктов */
+.container {
+    min-height: 200px;
+}
+
+/* Стили для карточек продуктов */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: center;
+    padding: 20px;
+}
+
+/* Стили для каждой карточки продукта */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    width: 75%;
+    aspect-ratio: 1 / 1; /* Установлено равное соотношение сторон */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card img {
+    max-width: 95%;
+    height: 150px; /* Фиксированная высота изображений */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes likeAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Стили для контейнера карточек техники */
+.tech-container {
+    display: flex;
+    justify-content: center; /* Центрируем карточки по горизонтали */
+    align-items: flex-start; /* Выравнивание карточек по верхнему краю */
+    gap: 20px; /* Отступ между карточками */
+    padding: 20px;
+    flex-wrap: nowrap; /* Убираем перенос карточек */
+}
+
+/* Стили для каждой карточки техники */
+.tech-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Ширина карточек */
+    height: 350px; /* Высота карточек */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tech-card img {
+    max-width: 100%;
+    height: 150px; /* Высота изображений */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tech-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.tech-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.tech-card:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+/* Стили для ссылок */
+a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: #000; /* Задает черный цвет ссылок */
+}
+
+a:hover {
+    color: #000; /* Оставляем черный цвет при наведении */
+}
+
+/* Обнуляем отступы и паддинги для основных элементов */
+header,
+nav,
+main {
+    margin: 0; /* Убирает отступы вокруг этих элементов */
+    padding: 0; /* Убирает внутренние отступы */
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Поднимаем карточку снизу */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем на место */
+    }
+}
+
+.tech-card {
+    animation: cardFadeIn 0.5s ease forwards; /* Применяем анимацию к карточкам */
+    opacity: 0; /* Скрываем карточки изначально */
+}
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Поднимаем карточку снизу */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем на место */
+    }
+}
+
+.product-card {
+    animation: cardFadeIn 0.5s ease forwards; /* Применяем анимацию к карточкам */
+    opacity: 0; /* Скрываем карточки изначально */
+}
